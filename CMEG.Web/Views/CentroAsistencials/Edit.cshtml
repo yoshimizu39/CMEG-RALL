@@ -1,0 +1,41 @@
+﻿@model CMEG.Web.Models.CentroAsistencialViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<br />
+
+<h1>Edit</h1>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="Logo" />
+            <partial name="_CentroAsistencial" />
+            <div class="form-group">
+                <button type="submit" value="Save" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></button>
+                <a asp-action="Index" class="btn btn-secondary"><i class="glyphicon glyphicon-circle-arrow-left"></i></a>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        @if (!string.IsNullOrEmpty(Model.Logo))
+        {
+            <img src="@Url.Content(Model.Logo)" alt="Image" style="width:1000px;height:1000px;max-width:200%;height:auto;" />
+        }
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
