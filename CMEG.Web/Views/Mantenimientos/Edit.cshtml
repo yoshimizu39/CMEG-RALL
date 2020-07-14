@@ -1,0 +1,49 @@
+﻿@model CMEG.Web.Data.Entities.Mantenimiento
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+<br />
+
+<h4>Mantenimiento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="FechaProgramacion" class="control-label"></label>
+                <input asp-for="FechaProgramacion" class="form-control" />
+                <span asp-validation-for="FechaProgramacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AñoEjecucion" class="control-label"></label>
+                <input asp-for="AñoEjecucion" class="form-control" />
+                <span asp-validation-for="AñoEjecucion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumeroMantenimiento" class="control-label"></label>
+                <input asp-for="NumeroMantenimiento" class="form-control" />
+                <span asp-validation-for="NumeroMantenimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" value="Save" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></button>
+                <a asp-action="Index" class="btn btn-secondary"><i class="glyphicon glyphicon-circle-arrow-left"></i></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

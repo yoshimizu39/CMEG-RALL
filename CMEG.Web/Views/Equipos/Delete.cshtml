@@ -1,0 +1,84 @@
+﻿@model CMEG.Web.Data.Entities.Equipo
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<br />
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Equipo</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Etiqueta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Etiqueta)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Serie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Serie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Licitacion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Licitacion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Garantia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Garantia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoGarantia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TipoGarantia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaInstalacion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FechaInstalacion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaCulminacion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FechaCulminacion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Otms)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Otms)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Logo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Logo)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" value="Delete" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
+        <a asp-action="Index" class="btn btn-secondary"><i class="glyphicon glyphicon-circle-arrow-left"></i></a>
+    </form>
+</div>

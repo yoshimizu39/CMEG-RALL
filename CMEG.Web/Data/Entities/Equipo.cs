@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -12,45 +14,46 @@ namespace CMEG.Web.Data.Entities
 
         [MaxLength(60, ErrorMessage = "El campo {0} no debe exceder de {1}")]
         [Required(ErrorMessage = "Campo obligatorio")]
-        [Display(Name = "Nomre de Equipo")]
+        [Display(Name = "Equipo")]
         public string Nombre { get; set; }
 
         [MaxLength(20, ErrorMessage = "El campo {0} no debe exceder de {1}")]
         [Required(ErrorMessage = "Campo obligatorio")]
-        [Display(Name = "Etiqueta Patrimonial")]
+        [Display(Name = "Etiqueta")]
         public string Etiqueta { get; set; }
 
         [MaxLength(60, ErrorMessage = "El campo {0} no debe exceder de {1}")]
         [Required(ErrorMessage = "Campo obligatorio")]
-        [Display(Name = "Serie de Equipo")]
+        [Display(Name = "Serie")]
         public string Serie { get; set; }
 
         [MaxLength(60, ErrorMessage = "El campo {0} no debe exceder de {1}")]
         [Required(ErrorMessage = "Campo obligatorio")]
-        [Display(Name = "Nùmero de Licitaciòn")]
+        [Display(Name = "Nº de Licitaciòn")]
         public string Licitacion { get; set; }
 
         [MaxLength(10, ErrorMessage = "El campo {0} no debe exceder de {1}")]
         [Required(ErrorMessage = "Campo obligatorio")]
-        [Display(Name = "Años de Garantìa de equipo")]
+        [Display(Name = "Garantìa")]
         public string Garantia { get; set; }
 
         [MaxLength(20, ErrorMessage = "El campo {0} no debe exceder de {1}")]
         [Required(ErrorMessage = "Campo obligatorio")]
-        [Display(Name = "Tipo de Garantia de Equipo")]
+        [Display(Name = "Tipo de Garantia")]
         public string TipoGarantia { get; set; }
 
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd HH:mm}" ,ApplyFormatInEditMode = false)]
+        [Display(Name = "Fecha Instalaciòn")]
         public DateTime FechaInstalacion { get; set; }
 
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd HH:mm}", ApplyFormatInEditMode = false)]
+        [Display(Name = "Fecha Culminaciòn")]
         public DateTime FechaCulminacion { get; set; }
 
-        [MaxLength(10, ErrorMessage = "El campo {0} no debe exceder de {1}")]
         [Required(ErrorMessage = "Campo obligatorio")]
-        [Display(Name = "Cantidad de OT>Ms a Ejecutar")]
+        [Display(Name = "Cantidad OTMs")]
         public int Otms { get; set; }
 
         [Display(Name = "Logo")]

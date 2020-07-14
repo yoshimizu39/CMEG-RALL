@@ -1,0 +1,57 @@
+﻿@model CMEG.Web.Models.MantenimientoViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<br />
+
+<h4>Mantenimiento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdEquipo" />
+            <div class="form-group">
+                <label asp-for="IdEquipo" class="control-label"></label>
+                <select asp-for="IdEquipo" asp-items="Model.Equipos" class="form-control" id="Equip" name="Equip"></select>
+                <span asp-validation-for="IdEquipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaInstalacion" class="control-label"></label>
+                @if (Model.IdEquipo != 0)
+                {
+                    <input asp-for="FechaInstalacion" class="form-control" />
+                }
+                <span asp-validation-for="FechaInstalacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaProgramacion" class="control-label"></label>
+                <input asp-for="FechaProgramacion" class="form-control" />
+                <span asp-validation-for="FechaProgramacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AñoEjecucion" class="control-label"></label>
+                <input asp-for="AñoEjecucion" class="form-control" />
+                <span asp-validation-for="AñoEjecucion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumeroMantenimiento" class="control-label"></label>
+                <input asp-for="NumeroMantenimiento" class="form-control" />
+                <span asp-validation-for="NumeroMantenimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" value="Create" class="btn btn-primary"><i class="glyphicon glyphicon-file"></i></button>
+                <a asp-action="Index" class="btn btn-secondary"><i class="glyphicon glyphicon-circle-arrow-left"></i></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

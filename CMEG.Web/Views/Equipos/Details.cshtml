@@ -1,0 +1,82 @@
+﻿@model CMEG.Web.Data.Entities.Equipo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<br />
+
+<div>
+    <h4>Equipo</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <dl class="dil-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Etiqueta)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Etiqueta)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Serie)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Serie)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Licitacion)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Licitacion)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Garantia)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Garantia)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.TipoGarantia)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.TipoGarantia)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.FechaInstalacion)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FechaInstalacion)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.FechaCulminacion)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.FechaCulminacion)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Otms)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Otms)
+                </dd>
+            </dl>
+        </div>
+        <div class="col-md-4">
+            <img src="@Url.Content(Model.Logo)" alt="Image" style="width:200px;height:200px;max-width:100%;height:auto;" />
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning"><i class="glyphicon glyphicon-list-alt"></i></a>
+    <a asp-action="Index" class="btn btn-secondary"><i class="glyphicon glyphicon-circle-arrow-left"></i></a>
+</div>

@@ -30,6 +30,7 @@ namespace CMEG.Web
 
             services.AddScoped<IImageHelper, ImageHelper>();
             services.AddScoped<IConverterHelper, ConverterHelper>();
+            services.AddScoped<IComboBoxHelper, ConboBoxHelper>();
 
         }
 

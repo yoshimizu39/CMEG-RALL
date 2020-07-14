@@ -19,6 +19,7 @@
     <Folder Include="wwwroot\font\" />
     <Folder Include="wwwroot\images\Centros\" />
     <Folder Include="wwwroot\images\Empresas\" />
+    <Folder Include="wwwroot\images\Equipos\" />
   </ItemGroup>
 
 

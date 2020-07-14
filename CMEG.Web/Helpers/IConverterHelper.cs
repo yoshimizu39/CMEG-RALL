@@ -13,5 +13,9 @@ namespace CMEG.Web.Helpers
         CentroAsistencialViewModel ToCentroAsistencialViewModel(CentroAsistencial centroAsistencial);
         Empresa ToEmpresa(EmpresaViewModel empresaViewModel, string path, bool isNew);
         EmpresaViewModel ToEmpresaViewModel(Empresa empresa);
+        Equipo ToEquipo(EquipoViewModel model, string path, bool isNew);
+        EquipoViewModel ToEquipoViewModel(Equipo entity);
+        Task<Mantenimiento> ToMantenimientoEntityAsync(MantenimientoViewModel model, bool isNew);
+        MantenimientoViewModel ToMantenimientoViewModel(Mantenimiento entity);
     }
 }

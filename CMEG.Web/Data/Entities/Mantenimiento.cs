@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -21,9 +22,12 @@ namespace CMEG.Web.Data.Entities
 
         [MaxLength(10, ErrorMessage = "El campo {0} no debe exceder de {1}")]
         [Required(ErrorMessage = "Campo obligatorio")]
-        [Display(Name = "Mantenimiento")]
+        [Display(Name = "Nº Mantenimiento")]
         public string NumeroMantenimiento { get; set; }
 
-        public ICollection<DetalleMantenimiento> Mantenimientos { get; set; }
+        public Equipo Equipo { get; set; }
+
+        public ICollection<DetalleMantenimiento> DetalleMantenimientos { get; set; }
+
     }
 }
