@@ -52,16 +52,18 @@ namespace CMEG.Web.Controllers
 
         public IActionResult Create()
         {
-            Mantenimiento entity = _context.Mantenimientos.FirstOrDefault();
-            if (entity == null)
+            Equipo equipo = _context.Equipos.FirstOrDefault();
+                                                                                                                    
+            if (equipo == null)
             {
                 return NotFound();
             }
 
             MantenimientoViewModel model = new MantenimientoViewModel
             {
+                IdEquipo = equipo.Id,
                 Equipos = _combo.GetComboEquipos(),
-                FechaInstalacion = entity.Equipo.FechaInstalacion
+                FechaInstalacion = equipo.FechaInstalacion
             };
 
             return View(model);

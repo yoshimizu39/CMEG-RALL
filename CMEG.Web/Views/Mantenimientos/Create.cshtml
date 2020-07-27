@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <br />
 
 <h4>Mantenimiento</h4>
@@ -15,18 +17,15 @@
     <div class="col-md-4">
         <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="IdEquipo" />
+            <input type="hidden" asp-for="@Model.EquipoId.Id" />
             <div class="form-group">
                 <label asp-for="IdEquipo" class="control-label"></label>
-                <select asp-for="IdEquipo" asp-items="Model.Equipos" class="form-control" id="Equip" name="Equip"></select>
+                <select asp-for="IdEquipo" asp-items="Model.Equipos" class="form-control"></select>
                 <span asp-validation-for="IdEquipo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FechaInstalacion" class="control-label"></label>
-                @if (Model.IdEquipo != 0)
-                {
-                    <input asp-for="FechaInstalacion" class="form-control" />
-                }
+                <input asp-for="FechaInstalacion" class="form-control"/>
                 <span asp-validation-for="FechaInstalacion" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -54,4 +53,14 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+        $('#combo').change(function () {
+            $.get($("#combo").val(), function () {
+                var text = $("#combo option:selected").val();
+                $("#text").val(text);
+                $("#partialView").html();
+            });
+        });
+    </script>
 }

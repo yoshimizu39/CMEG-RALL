@@ -25,7 +25,7 @@ namespace CMEG.Web.Data.Entities
         [Display(Name = "Nº Mantenimiento")]
         public string NumeroMantenimiento { get; set; }
 
-        public Equipo Equipo { get; set; }
+        public Equipo EquipoId { get; set; }
 
         public ICollection<DetalleMantenimiento> DetalleMantenimientos { get; set; }
 

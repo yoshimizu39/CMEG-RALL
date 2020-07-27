@@ -125,7 +125,7 @@ namespace CMEG.Web.Helpers
                 FechaProgramacion = model.FechaProgramacion,
                 Id = isNew ? 0 : model.Id,
                 NumeroMantenimiento = model.NumeroMantenimiento,
-                Equipo = await _context.Equipos.FindAsync(model.IdEquipo)                           
+                Id = await _context.Equipos.FindAsync(model.IdEquipo)                           
             };
         }
 
@@ -137,11 +137,11 @@ namespace CMEG.Web.Helpers
                 DetalleMantenimientos = entity.DetalleMantenimientos,
                 FechaProgramacion = entity.FechaProgramacion,
                 Id = entity.Id,
-                Equipo = entity.Equipo,
+                Id = entity.Id,
                 NumeroMantenimiento = entity.NumeroMantenimiento,
-                IdEquipo = entity.Equipo.Id,
+                IdEquipo = entity.Id.Id,
                 Equipos = _combo.GetComboEquipos(),
-                FechaInstalacion = entity.Equipo.FechaInstalacion
+                FechaInstalacion = entity.Id.FechaInstalacion
             };
         }
     }
